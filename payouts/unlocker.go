@@ -716,6 +716,13 @@ func getConstRewardcallisto(height int64) *big.Int {
 	return calcBigNumber(38.88)
 }
 
+// QIE
+func getConstRewardQie(height int64) *big.Int {
+	// Rewards)
+	// QIE
+	return qieBlockReward
+}
+
 // ubqhash
 func getUncleRewardUbiq(uHeight *big.Int, height *big.Int, reward *big.Int) *big.Int {
 
@@ -744,16 +751,6 @@ func getConstRewardEthereum(height int64, cfg *UnlockerConfig) *big.Int {
 	if cfg.ConstantinopleFBlock.Cmp(headerNumber) <= 0 {
 		blockReward = constantinopleBlockReward
 	}
-	// Accumulate the rewards for the miner and any included uncles
-	reward := new(big.Int).Set(blockReward)
-	return reward
-}
-
-// ethash QIE
-func getConstRewardQie(height int64, cfg *UnlockerConfig) *big.Int {
-	// Select the correct block reward based on chain progression
-	blockReward = qieBlockReward
-
 	// Accumulate the rewards for the miner and any included uncles
 	reward := new(big.Int).Set(blockReward)
 	return reward
