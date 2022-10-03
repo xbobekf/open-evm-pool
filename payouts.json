@@ -1,0 +1,50 @@
+{
+	"threads": 4,
+	"coin": "etc",
+	"name": "main",
+    "pplns": 9000,
+	"network": "classic",
+	"coin-name":"etc",
+
+
+
+	"payouts": {
+		"enabled": true,
+		"requirePeers": 1,
+		"interval": "20m",
+		"daemon": "http://127.0.0.1:8545",
+		"timeout": "10s",
+		"address": "0xD3876313e812A6255c7Fc236db33075290cFC526",
+		"gas": "21000",
+		"gasPrice": "50000000000",
+		"autoGas": true,
+		"threshold": 500000000,
+		"bgsave": false,
+		"concurrentTx": 10
+	},
+
+  "upstreamCheckInterval": "5s",
+
+  "upstream": [
+    {
+      "name": "main",
+      "url": "http://127.0.0.1:8545",
+      "timeout": "10s"
+    }
+  ],
+
+	"redis": {
+		"endpoint": "127.0.0.1:6379",
+		"poolSize": 10,
+		"database": 0,
+		"password": "",
+                "sentinelEnabled": false,
+                "masterName": "mymaster",
+                "sentinelAddrs": [
+            		"127.0.0.1:26379",
+           	        "127.0.0.1:26389",
+           	        "127.0.0.1:26399"
+        ]
+	}
+
+}
