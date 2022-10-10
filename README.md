@@ -123,7 +123,7 @@ otherwise you will get errors on start because of JSON comments.**
   "name": "main",
   // shares or (solo "pplns": 0,)
   "pplns": 9000,
-   // mordor, classic, ethereum, ropsten or ubiq, callisto, etica, QIE
+   // mordor, classic, ethereum, ropsten or ubiq, callisto, etica, QIE, ethereumPow, ethereumFair, expanse
   "network": "classic",
   // exchange api coingecko
   "coin-name":"etc",
