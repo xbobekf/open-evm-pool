@@ -46,7 +46,7 @@ var byzantiumBlockReward = big.NewInt(3e+18)
 var constantinopleBlockReward = big.NewInt(2e+18)
 
 // params for QIE
-var qieBlockReward = big.NewInt(2e+16)
+var qieBlockReward = big.NewInt(2e+18)
 
 // params for ubqhash
 var ubiqStartReward = big.NewInt(8e+18)
