@@ -30,7 +30,7 @@ Dependencies:
 
 **I highly recommend to use Ubuntu 20.04 LTS.**
 
-First install  [core-geth](https://github.com/etclabscore/core-geth/releases).
+First install  [core-geth](https://github.com/yuriy0803/core-geth1/releases).
 
 Clone & compile:
 
