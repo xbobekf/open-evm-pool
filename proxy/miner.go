@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/etclabscore/core-geth/common"
-	"github.com/yuriy0803/etchash"
+	"github.com/etclabscore/etchash"
 )
 
 var (
@@ -22,13 +22,13 @@ func (s *ProxyServer) processShare(login, id, ip string, t *BlockTemplate, param
 
 	if hasher == nil {
 		if s.config.Network == "classic" {
-			hasher = etchash.New(&ecip1099FBlockClassic, nil)
+			hasher = etchash.New(&ecip1099FBlockClassic, nil, nil)
 		} else if s.config.Network == "mordor" {
-			hasher = etchash.New(&ecip1099FBlockMordor, nil)
+			hasher = etchash.New(&ecip1099FBlockMordor, nil, nil)
 		} else if s.config.Network == "ubiq" {
-			hasher = etchash.New(nil, &uip1FEpoch)
+			hasher = etchash.New(nil, &uip1FEpoch, nil)
 		} else if s.config.Network == "ethereum" || s.config.Network == "ropsten" || s.config.Network == "ethereumPow" || s.config.Network == "ethereumFair" || s.config.Network == "callisto" || s.config.Network == "etica" || s.config.Network == "expanse" || s.config.Network == "qie" || s.config.Network == "zether"{
-			hasher = etchash.New(nil, nil)
+			hasher = etchash.New(nil, nil, nil)
 		} else {
 			// unknown network
 			log.Printf("Unknown network configuration %s", s.config.Network)
