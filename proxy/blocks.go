@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/etclabscore/core-geth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/xbobekf/open-evm-pool/rpc"
 	"github.com/xbobekf/open-evm-pool/util"
 )
