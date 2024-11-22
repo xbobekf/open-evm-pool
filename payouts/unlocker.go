@@ -49,7 +49,7 @@ var constantinopleBlockReward = big.NewInt(2e+18)
 var qieBlockReward = big.NewInt(2e+18)
 
 // params for zether
-var zetherBlockReward = big.NewInt(9000e+18)
+var zetherBlockReward = big.NewInt(9000e+2)
 
 // params for ubqhash
 var ubiqStartReward = big.NewInt(8e+18)
