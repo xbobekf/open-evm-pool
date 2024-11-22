@@ -1,10 +1,10 @@
 {
-    "threads": 2,
-    "coin": "qie",
-    "name": "main",
-    "pplns": 9000,
-    "network": "qie",
-    "coin-name":"qie",
+    "threads": 12,
+    "coin": "zth-solo",
+    "name": "zth-solo",
+    "pplns": 0,
+    "network": "zether",
+    "coin-name":"zether",
     
     "proxy": {
       "enabled": true,
@@ -15,7 +15,7 @@
   
       "stratum": {
         "enabled": true,
-        "listen": "0.0.0.0:8088",
+        "listen": "0.0.0.0:4084",
         "timeout": "120s",
         "maxConn": 8192,
         "tls": false,
@@ -80,12 +80,12 @@
     "upstream": [
       {
         "name": "main",
-        "url": "http://127.0.0.1:8545",
+        "url": "http://192.168.22.238:8545",
         "timeout": "10s"
       },
       {
         "name": "backup",
-        "url": "http://127.0.0.2:8545",
+        "url": "http://192.168.22.238:8545",
         "timeout": "10s"
       }
     ],
@@ -130,7 +130,7 @@
       "interval": "12h",
       "daemon": "http://127.0.0.1:8545",
       "timeout": "10s",
-      "address": "0x0",
+      "address": "0x4D412f6131776A1dB707D536039B76439De27D73",
       "autoGas": true,
       "maxPriorityFee": "2000000000",
       "gas": "21000",

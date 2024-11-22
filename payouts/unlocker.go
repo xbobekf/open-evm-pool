@@ -48,6 +48,9 @@ var constantinopleBlockReward = big.NewInt(2e+18)
 // params for QIE
 var qieBlockReward = big.NewInt(2e+18)
 
+// params for zether
+var zetherBlockReward = big.NewInt(9000e+18)
+
 // params for ubqhash
 var ubiqStartReward = big.NewInt(8e+18)
 
@@ -100,6 +103,8 @@ func NewBlockUnlocker(cfg *UnlockerConfig, backend *storage.RedisClient, network
 	} else if network == "ubiq" {
 		// nothing needs configuring here, simply proceed.
 	} else if network == "qie" {
+		// nothing needs configuring here, simply proceed.
+	} else if network == "zether" {
 		// nothing needs configuring here, simply proceed.
 	} else {
 		log.Fatalln("Invalid network set", network)
@@ -319,6 +324,13 @@ func (u *BlockUnlocker) handleBlock(block *rpc.GetBlockReply, candidate *storage
 		rewardForUncles := big.NewInt(0).Mul(uncleReward, big.NewInt(int64(len(block.Uncles))))
 		reward.Add(reward, rewardForUncles)
 
+	} else if u.config.Network == "zether" {
+		reward = getConstRewardZether(candidate.Height)
+		// Add reward for including uncles
+		uncleReward := new(big.Int).Div(reward, big32)
+		rewardForUncles := big.NewInt(0).Mul(uncleReward, big.NewInt(int64(len(block.Uncles))))
+		reward.Add(reward, rewardForUncles)
+
 	} else if u.config.Network == "ethereum" || u.config.Network == "ropsten" || u.config.Network == "ethereumPow" || u.config.Network == "ethereumFair" {
 		reward = getConstRewardEthereum(candidate.Height, u.config)
 		// Add reward for including uncles
@@ -365,6 +377,8 @@ func handleUncle(height int64, uncle *rpc.GetBlockReply, candidate *storage.Bloc
 		reward = getUncleRewardEthereum(new(big.Int).SetInt64(uncleHeight), new(big.Int).SetInt64(height), getConstRewardcallisto(height))
 	} else if cfg.Network == "qie" {
 		reward = getUncleRewardEthereum(new(big.Int).SetInt64(uncleHeight), new(big.Int).SetInt64(height), getConstRewardQie(height))
+	} else if cfg.Network == "zether" {
+		reward = getUncleRewardEthereum(new(big.Int).SetInt64(uncleHeight), new(big.Int).SetInt64(height), getConstRewardZether(height))
 	} else if cfg.Network == "ethereum" || cfg.Network == "ropsten" || cfg.Network == "ethereumPow" || cfg.Network == "ethereumFair" {
 		reward = getUncleRewardEthereum(new(big.Int).SetInt64(uncleHeight), new(big.Int).SetInt64(height), getConstRewardUbiq(height))
 	}
@@ -765,6 +779,13 @@ func getConstRewardQie(height int64) *big.Int {
 	return calcBigNumber(2.0)
 }
 
+// zether
+func getConstRewardZether(height int64) *big.Int {
+	// Rewards)
+	// zether
+	return calcBigNumber(2.0)
+}
+
 // etica
 func getConstRewardetica(height int64) *big.Int {
 	// Rewards)
@@ -805,7 +826,7 @@ func getConstRewardEthereum(height int64, cfg *UnlockerConfig) *big.Int {
 	return reward
 }
 
-// ethash callisto qie etica
+// ethash callisto qie etica zether
 func getUncleRewardEthereum(uHeight *big.Int, height *big.Int, reward *big.Int) *big.Int {
 	r := new(big.Int)
 	r.Add(uHeight, big8)
@@ -819,7 +840,7 @@ func getUncleRewardEthereum(uHeight *big.Int, height *big.Int, reward *big.Int) 
 	return r
 }
 
-// ethash, etchash, ubqhash, qie
+// ethash, etchash, ubqhash, qie zether
 
 func (u *BlockUnlocker) getExtraRewardForTx(block *rpc.GetBlockReply) (*big.Int, error) {
 	amount := new(big.Int)
