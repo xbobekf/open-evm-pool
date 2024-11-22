@@ -1,11 +1,11 @@
 package proxy
 
 import (
-	"github.com/topdefi/open-evm-pool/api"
-	"github.com/topdefi/open-evm-pool/exchange"
-	"github.com/topdefi/open-evm-pool/payouts"
-	"github.com/topdefi/open-evm-pool/policy"
-	"github.com/topdefi/open-evm-pool/storage"
+	"github.com/xbobekf/open-evm-pool/api"
+	"github.com/xbobekf/open-evm-pool/exchange"
+	"github.com/xbobekf/open-evm-pool/payouts"
+	"github.com/xbobekf/open-evm-pool/policy"
+	"github.com/xbobekf/open-evm-pool/storage"
 )
 
 type Config struct {

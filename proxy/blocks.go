@@ -8,8 +8,8 @@ import (
 	"sync"
 
 	"github.com/etclabscore/core-geth/common"
-	"github.com/topdefi/open-evm-pool/rpc"
-	"github.com/topdefi/open-evm-pool/util"
+	"github.com/xbobekf/open-evm-pool/rpc"
+	"github.com/xbobekf/open-evm-pool/util"
 )
 
 const maxBacklog = 3

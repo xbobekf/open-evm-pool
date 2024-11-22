@@ -12,7 +12,7 @@ import (
 
 	"gopkg.in/redis.v3"
 
-	"github.com/topdefi/open-evm-pool/util"
+	"github.com/xbobekf/open-evm-pool/util"
 )
 
 type Config struct {

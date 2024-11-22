@@ -37,7 +37,7 @@ Clone & compile:
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     sudo apt-get install -y nodejs
     
-    git clone https://github.com/topdefi/open-evm-pool.git
+    git clone https://github.com/xbobekf/open-evm-pool.git
     cd open-evm-pool
     cd build
     chmod 755 env.sh

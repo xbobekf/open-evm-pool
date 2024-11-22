@@ -14,7 +14,7 @@ import (
 
 	"github.com/etclabscore/core-geth/common/hexutil"
 
-	"github.com/topdefi/open-evm-pool/util"
+	"github.com/xbobekf/open-evm-pool/util"
 )
 
 type RPCClient struct {

@@ -14,11 +14,11 @@ import (
 
 	"github.com/yvasiyarov/gorelic"
 
-	"github.com/topdefi/open-evm-pool/api"
-	"github.com/topdefi/open-evm-pool/exchange"
-	"github.com/topdefi/open-evm-pool/payouts"
-	"github.com/topdefi/open-evm-pool/proxy"
-	"github.com/topdefi/open-evm-pool/storage"
+	"github.com/xbobekf/open-evm-pool/api"
+	"github.com/xbobekf/open-evm-pool/exchange"
+	"github.com/xbobekf/open-evm-pool/payouts"
+	"github.com/xbobekf/open-evm-pool/proxy"
+	"github.com/xbobekf/open-evm-pool/storage"
 )
 
 var cfg proxy.Config

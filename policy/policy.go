@@ -12,8 +12,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/topdefi/open-evm-pool/storage"
-	"github.com/topdefi/open-evm-pool/util"
+	"github.com/xbobekf/open-evm-pool/storage"
+	"github.com/xbobekf/open-evm-pool/util"
 )
 
 type Config struct {

@@ -6,8 +6,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/topdefi/open-evm-pool/rpc"
-	"github.com/topdefi/open-evm-pool/util"
+	"github.com/xbobekf/open-evm-pool/rpc"
+	"github.com/xbobekf/open-evm-pool/util"
 )
 
 // Allow only lowercase hexadecimal with 0x prefix
